@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300');
+@import url('https://fonts.googleapis.com/css?family=Black+Ops+One|Roboto+Mono:300');
+
+*{
+	/*box sizing*/
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Roboto Mono', sans-serif;
+	font-weight: 300;
+	background: #181818;
+	color: #fff;
+	overflow: hidden; /*hidden pentru a nu avea scrollbar la continut*/
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-weight: 300;
+}
+
+#wrapper{/*impartim intreg continutul in left si right*/
+	display: flex;
+	flex-direction: row;
+	
+}
+#left{
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+
+}
+#rigt{
+
+	flex: 1;
+}
+
+/*sign in*/
+#signin{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	padding-bottom: 1rem;
+}
+#signin form{
+	width: 80%;
+	padding-bottom: 3rem;
+}
+
+#signin .logo{
+	margin-bottom: 8vh;
+}
+
+#signin .logo h1{
+	padding: 4px;
+	width: 250px;
+	height: 55px;
+	color: #f96816;
+	border-radius: 17px;
+	border: double 5px #555;
+	text-align: center;
+	font-family: 'Black Ops One', cursive;
+}
+
+#signin label{
+	font-size: 0.9rem;
+	line-height: 2rem;
+	font-weight: 500;
+}
+
+#signin .text-input{
+	margin-bottom: 1.3rem;
+	width: 100%;
+	border-radius: 6px;
+	background: #181818;
+	border: 1px solid #555;
+	color: #ccc;
+	padding: 0.5rem 1rem;
+	line-height: 1.3rem;
+}
+
+/* Primary Button*/
+.primary-btn{
+	padding: 0.7rem 1rem;
+	height: 2.7rem;
+	display: block;
+	border:0;
+	border-radius: 6px;
+	font-weight: 500;
+	background: #f96816;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+}
+
+/* Signin Button*/
+#signin .primary-btn{
+	width: 100%;
+}
+.primary-btn:hover{ /*facem setari de modificare cand cursorul este deasupra butonului*/
+	background-color: #ff9d39;/*setam schibarea culorii butonnului cand acesta este acoperit*/
+	color: #b34700;/*setam schibarea culorii butonnului cand acesta este acoperit*/
+	transition: all 0.7s; /*avem o tranzitie de culoare cand butonul de submit este acoperit setat la 0.6 secunde*/
+	cursor: pointer; /*schimbam cursorul cad acoperim butonul submit*/
+}
+
+/* Secondary Button*/
+.secondary-btn{
+	padding: 0.7rem 1rem;
+	height: 2.7rem;
+	display: block;
+	border:1px solid #f4f4f4;
+	border-radius: 6px;
+	font-weight: 500;
+	background: none;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+}
+
+.secondary-btn:hover{ /*facem setari de modificare cand cursorul este deasupra butonului*/
+	border-color: #ff9b39;/*setam schibarea culorii butonnului cand acesta este acoperit*/
+	color: #ff4b39;/*setam schibarea culorii butonnului cand acesta este acoperit*/
+	transition: all 0.4s; /*avem o tranzitie de culoare cand butonul de submit este acoperit setat la 0.6 secunde*/
+	cursor: pointer; /*schimbam cursorul cad acoperim butonul submit*/
+}
+
+#signin .secondary-btn,
+.or,
+.links{
+	width: 60%;
+}
+#signin .links a{
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	margin-bottom: 1rem;
+	text-align: center;
+	font-size: 0.9rem;
+}
+#signin .or{
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 1.2rem;
+	align-items: center;
+}
+#signin .or .bar{
+	border: none;
+	flex: auto;
+	height: 1px;
+	background: #aaa;
+	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+}
+
+#main-footer{
+	color: #ccc;
+	text-align: center;
+	font-size: 0.8rem;
+	max-width: 80%;
+	padding-top: 5rem;
+}
+
+#main-footer a{
+	color: #f96816;
+	text-decoration: underline;
+}
+
+#signin a{
+	height: auto;
+}
+
+
+
+/* ShowCase right side*/
+#showcase{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('img/showcase.jpg') no-repeat center center / cover;
+  height: 100vh;
+  text-align: center;
+}
+
+#showcase .showcase-text{
+	font-size: 3rem;
+	width: 100%;
+	color: #FFF;
+	margin-bottom: 1.5rem;
+}
+#showcase .secondary-btn{
+	width: 60%;
+	margin: auto;
+}
+
+
+/*Media Queries*/
+@media(min-width: 1200px){/*cand desktop-ul este mai mare decat 1200 atunci right devine mai mare decat left*/
+	#left{
+		flex: 4;
+	}
+	#right{
+		flex: 6;
+	}
+}
+
+@media (max-width: 768px) {/*cand desktop mai mic de 768*/
+	body{
+		overflow: auto;
+
+	}
+	#right{
+		display: none;
+	}
+	#left{
+		justify-content: start;
+		margin-top: 4vh;
+	}
+	#signin .logo{
+		margin-bottom: 2vh;
+	}
+	#signin .text-input{
+		margin-bottom: 0.7rem;
+	}
+	main-footer{
+		padding-top: 1rem;
+	}
+	#signin a{
+		align-items: center;
+		font-size: 0.8rem;
+	}
+}
